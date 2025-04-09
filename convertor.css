@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #292929, #111);
+    background-size: 400% 400%;
+    animation: movingBackground 12s ease infinite;
+    color: #fff;
+}
+
+/* Moving dark gradient animation */
+@keyframes movingBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container with glassmorphism effect */
+.container {
+    text-align: center;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title Styling with Neon Glow */
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff4f4f, #5d5dfc, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Subheading */
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #ff4f4f, 0 0 10px #5d5dfc; }
+    100% { text-shadow: 0 0 10px #ff4f4f, 0 0 20px #5d5dfc; }
+}
+
+/* Input field */
+.text-control {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid #5d5dfc;
+    animation: pulseBorder 1.5s infinite alternate;
+}
+
+/* Pulsating Border */
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 5px #5d5dfc; }
+    100% { box-shadow: 0 0 15px #5d5dfc; }
+}
+
+/* Glowing effect on focus */
+.text-control:focus-visible {
+    outline: none;
+    border: 2px solid #5d5dfc;
+    box-shadow: 0 0 15px #5d5dfc;
+}
+
+/* Error message */
+.error-para {
+    color: #ff4f4f;
+    font-weight: bold;
+}
+
+/* Button */
+.btn {
+    padding: 0.8rem 1.5rem;
+    background: #5d5dfc;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover & glowing effect */
+.btn:hover {
+    background: #4545e0;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #5d5dfc, 0 0 20px #5d5dfc;
+}
+
+/* Ripple Effect on Click */
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    opacity: 0;
+}
+
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .text-control {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
