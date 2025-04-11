@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     const text = document.getElementById("textToConvert");
     const convertBtn = document.getElementById("convertBtn");
 
